@@ -102,8 +102,6 @@ public class SecondActivity extends AppCompatActivity {
             } else if (resultCode == RESULT_CANCELED) {
                 // Sign in was canceled by the user, finish the activity
                 Toast.makeText(this, "Sign in canceled", Toast.LENGTH_SHORT).show();
-//                Intent mainActivityIntent = new Intent(this, MainActivity.class);
-//                startActivity(mainActivityIntent);
                 this.finish();
             }
         }
