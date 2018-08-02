@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Auth Challenge</string>
+    <string name="main_activity_name">MAIN ACTIVITY</string>
+    <string name="second_activity_name">SECOND ACTIVITY</string>
+    <string name="third_activity_name">THIRD ACTIVITY</string>
+    <string name="go_activity1_button_label">MAIN ACTIVITY\n(free)</string>
+    <string name="go_activity2_button_label">SECOND ACTIVITY\n(Not free)</string>
+    <string name="go_activity3_button_label">THIRD ACTIVITY\n(Not free)</string>
+    <string name="sign_out">Sign Out</string>
+</resources>
