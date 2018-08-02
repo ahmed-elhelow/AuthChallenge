@@ -10,8 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.firebase.ui.auth.AuthUI;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -52,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.sign_out_menu:
-                AuthUI.getInstance().signOut(this);
+                SignInActivity.sign_out(this);
                 Toast.makeText(this, "Signed out!", Toast.LENGTH_SHORT).show();
                 return true;
             default:
