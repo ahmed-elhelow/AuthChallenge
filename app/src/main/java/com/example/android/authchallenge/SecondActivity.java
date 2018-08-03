@@ -8,10 +8,15 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class SecondActivity extends AppCompatActivity {
 
+    /*
+     * Second Activity requires signing in
+     * It contains two buttons to switch to Main and Third Activity
+     * There is a menu item for signing out
+     * Checking for signing in occurs in onResume
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +44,20 @@ public class SecondActivity extends AppCompatActivity {
         });
     }
 
+    /*
+     * If user is not signed in, onResume directs the user to the signInActivity
+     * The Singleton class SignInStateClass is used to keep track of the user state
+     */
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SignInStateClass signInState = SignInStateClass.getInstance();
+        if(!signInState.getSignedInState()) {
+            Intent signInActivityIntent = new Intent(this, SignInActivity.class);
+            startActivity(signInActivityIntent);
+        }
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -51,7 +70,6 @@ public class SecondActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.sign_out_menu:
                 SignInActivity.sign_out(this);
-                Toast.makeText(this, "Signed out!", Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

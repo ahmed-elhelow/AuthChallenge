@@ -10,8 +10,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+
+
 public class MainActivity extends AppCompatActivity {
 
+    /*
+     * Main Activity doesn't required signing in
+     * It contains two buttons to switch to Second and Third Activity
+     * The Second and Third Activities require signing in
+     * There is a menu item for signing out
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
